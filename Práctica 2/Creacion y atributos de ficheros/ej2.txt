@@ -1,0 +1,10 @@
+Directorios:
+[cursoredes@localhost ~]$ ls -ld  Downloads
+drwxr-xr-x 2 cursoredes cursoredes 6 Sep  9  2018 Downloads
+
+[cursoredes@localhost Desktop]$ ls -ld  modulo2
+drwxrwxr-x 2 cursoredes cursoredes 4096 Nov  7 14:25 modulo2
+
+Ficheros:
+[cursoredes@localhost practica2.2]$ ls -ld  ejercicio5.c
+-rw-rw-r-- 1 cursoredes cursoredes 14 Nov 21 09:41 ejercicio5.c

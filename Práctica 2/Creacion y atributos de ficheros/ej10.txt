@@ -1,0 +1,36 @@
+Simbólicos:
+[cursoredes@localhost CodigoP2]$ ln -s ej1.txt a
+[cursoredes@localhost CodigoP2]$ mkdir ej10
+[cursoredes@localhost CodigoP2]$ ln -s ej10 b
+[cursoredes@localhost CodigoP2]$ ls -i
+3577001 a      870349 ej10.c  3126370 ej3.txt  3508948 ej5.c    3126374 ej7.c    3126378 ej9.c
+3508903 b     3921197 ej1.txt  3508946 ej4.txt  3126373 ej6.txt  3126377 ej8.txt
+870351 ej10  3126369 ej2.txt  3126371 ej5      3126375 ej7      3126379 ej9
+
+Rigidos:
+[cursoredes@localhost CodigoP2]$ ln ej1.txt a
+[cursoredes@localhost CodigoP2]$ ln ej10 b
+ln: ‘ej10’: hard link not allowed for directory
+[cursoredes@localhost CodigoP2]$ ls -i
+3921197 a         3921197 ej1.txt  3508946 ej4.txt  3126373 ej6.txt  3126377 ej8.txt
+ 870351 ej10      3126369 ej2.txt  3126371 ej5      3126375 ej7      3126379 ej9
+ 870349 ej10.txt  3126370 ej3.txt  3508948 ej5.c    3126374 ej7.c    3126378 ej9.c
+
+
+ [cursoredes@localhost CodigoP2]$ stat ej1.txt
+  File: ‘ej1.txt’
+  Size: 587             Blocks: 8          IO Block: 4096   regular file
+Device: fd00h/64768d    Inode: 3921197     Links: 2
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/cursoredes)   Gid: ( 1000/cursoredes)
+Access: 2022-11-21 09:28:14.448000000 +0100
+Modify: 2022-11-21 09:40:15.150290524 +0100
+Change: 2022-11-21 12:04:09.746236309 +0100
+ Birth: -
+
+
+ En el rigido como el enlace y el fichero apuntan al mismo inodo si se borra, se
+ sigue teniendo acceso al contenido. Si se vuelve a crear el fichero, el enlace sigue
+ apuntando al mismo inodo pero el fichero ya no. En cambio si se borra el fichero con el
+ enlace simbólico se piede la información, no se puede acceder, pero si se vuelve a crear
+ volvemos a tener el acceso.
+ En el caso de borrar los enlaces se decrementa el contador.

@@ -1,0 +1,41 @@
+chmod 540 fichero
+
+[cursoredes@localhost practica2.2]$ chmod 540 ejercicio5.c
+[cursoredes@localhost practica2.2]$ ls -l
+total 12
+-rw-rw-r-- 1 cursoredes cursoredes 12 Nov 21 09:48 ejercicio3.txt
+-r-xr----- 1 cursoredes cursoredes 14 Nov 21 09:41 ejercicio5.c
+-rw-r--r-x 1 cursoredes cursoredes 11 Nov 21 09:45 fichero.txt
+
+
+chmod u=rx,g=r,o= fichero
+
+[cursoredes@localhost practica2.2]$ chmod u=rx,g=r,o= ejercicio5.c
+[cursoredes@localhost practica2.2]$ ls -l
+total 12
+-rw-rw-r-- 1 cursoredes cursoredes 12 Nov 21 09:48 ejercicio3.txt
+-r-xr----- 1 cursoredes cursoredes 14 Nov 21 09:41 ejercicio5.c
+-rw-r--r-x 1 cursoredes cursoredes 11 Nov 21 09:45 fichero.txt
+
+-----------------
+
+[cursoredes@localhost practica2.2]$ ls -l
+total 16
+-rw-rw-r-- 1 cursoredes cursoredes 12 Nov 21 09:53 ej32.txt
+-rw-rw-r-- 1 cursoredes cursoredes 12 Nov 21 09:48 ejercicio3.txt
+-r-xr----- 1 cursoredes cursoredes 14 Nov 21 09:41 ejercicio5.c
+-rw-r--r-x 1 cursoredes cursoredes 11 Nov 21 09:45 fichero.txt
+[cursoredes@localhost practica2.2]$ chmod g-w ej32.txt
+[cursoredes@localhost practica2.2]$ ls -l
+total 16
+-rw-r--r-- 1 cursoredes cursoredes 12 Nov 21 09:53 ej32.txt
+-rw-rw-r-- 1 cursoredes cursoredes 12 Nov 21 09:48 ejercicio3.txt
+-r-xr----- 1 cursoredes cursoredes 14 Nov 21 09:41 ejercicio5.c
+-rw-r--r-x 1 cursoredes cursoredes 11 Nov 21 09:45 fichero.txt
+[cursoredes@localhost practica2.2]$ chmod o+x ej32.txt
+[cursoredes@localhost practica2.2]$ ls -l
+total 16
+-rw-r--r-x 1 cursoredes cursoredes 12 Nov 21 09:53 ej32.txt
+-rw-rw-r-- 1 cursoredes cursoredes 12 Nov 21 09:48 ejercicio3.txt
+-r-xr----- 1 cursoredes cursoredes 14 Nov 21 09:41 ejercicio5.c
+-rw-r--r-x 1 cursoredes cursoredes 11 Nov 21 09:45 fichero.txt

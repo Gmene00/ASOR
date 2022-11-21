@@ -1,0 +1,18 @@
+[cursoredes@localhost ej6]$ umask
+0002
+[cursoredes@localhost ej6]$ touch ej1.c
+[cursoredes@localhost ej6]$ ls -l
+total 0
+-rw-rw-r-- 1 cursoredes cursoredes 0 Nov 21 10:30 ej1.c
+[cursoredes@localhost ej6]$ umask 027
+[cursoredes@localhost ej6]$ ls
+ej1.c
+[cursoredes@localhost ej6]$ touch ej2
+[cursoredes@localhost ej6]$ rm ej2
+[cursoredes@localhost ej6]$ touch ej2.c
+[cursoredes@localhost ej6]$ ls
+ej1.c  ej2.c
+[cursoredes@localhost ej6]$ ls -l
+total 0
+-rw-rw-r-- 1 cursoredes cursoredes 0 Nov 21 10:30 ej1.c
+-rw-r----- 1 cursoredes cursoredes 0 Nov 21 10:31 ej2.c

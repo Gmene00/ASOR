@@ -1,0 +1,16 @@
+[cursoredes@localhost practica2.2]$ ls -i
+  918788 ej32.txt         1005492 ejercicio5      918759 fichero.txt
+33582447 ej6               918758 ejercicio5.c   1172160 prueba
+  918787 ejercicio3.txt   1172185 ejercicio7
+17299914 ejercicio4       1172183 ejercicio7.c
+
+
+[cursoredes@localhost practica2.2]$ stat ej32.txt
+  File: ‘ej32.txt’
+  Size: 12        	Blocks: 8          IO Block: 4096   regular file
+Device: fd00h/64768d	Inode: 918788      Links: 1
+Access: (0645/-rw-r--r-x)  Uid: ( 1000/cursoredes)   Gid: ( 1000/cursoredes)
+Access: 2022-11-21 09:53:41.499035373 +0100
+Modify: 2022-11-21 09:53:41.499035373 +0100
+Change: 2022-11-21 09:55:22.051755682 +0100
+ Birth: -

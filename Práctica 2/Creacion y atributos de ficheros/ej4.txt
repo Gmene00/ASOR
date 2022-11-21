@@ -1,0 +1,14 @@
+Permisos al crearlo:
+drwxrwxr-x 2 cursoredes cursoredes  6 Nov 21 10:00 ejercicio4
+
+[cursoredes@localhost practica2.2]$ chmod 664 ejercicio4
+[cursoredes@localhost practica2.2]$ ls -l
+total 16
+-rw-r--r-x 1 cursoredes cursoredes 12 Nov 21 09:53 ej32.txt
+-rw-rw-r-- 1 cursoredes cursoredes 12 Nov 21 09:48 ejercicio3.txt
+drw-rw-r-- 2 cursoredes cursoredes  6 Nov 21 10:00 ejercicio4
+-r-xr----- 1 cursoredes cursoredes 14 Nov 21 09:41 ejercicio5.c
+-rw-r--r-x 1 cursoredes cursoredes 11 Nov 21 09:45 fichero.txt
+
+[cursoredes@localhost practica2.2]$ cd ejercicio4
+bash: cd: ejercicio4: Permission denied

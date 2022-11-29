@@ -1,0 +1,40 @@
+Cada vez que se haga un sleep nuevo cambia el id del proceso.
+
+kill -s SIGHUP 3079 
+[cursoredes@localhost ~]$ sleep 600
+Hangup
+
+kill -s SIGKILL 3532 
+[cursoredes@localhost ~]$ sleep 600
+Killed
+
+kill -s SIGSEGV 3622
+[cursoredes@localhost ~]$ sleep 600
+Segmentation fault (core dumped)
+
+kill -s SIGIO 3714
+[cursoredes@localhost ~]$ sleep 600
+I/O possible
+
+kill -s SIGRTMAX 3777
+[cursoredes@localhost ~]$ sleep 600
+Real-time signal 30
+
+kill -s SIGSYS 3867
+[cursoredes@localhost ~]$ sleep 600
+Bad system call (core dumped)
+
+kill -s SIGSTOP 3894
+[cursoredes@localhost ~]$ sleep 600
+
+[1]+  Stopped                 sleep 600
+//Este proceso con esta señal no llega a terminarlo, unicamente lo para.
+
+kill -s SIGFPE 3922
+[cursoredes@localhost ~]$ sleep 600
+Floating point exception (core dumped)
+
+kill -s SIGTTOU 4012
+[cursoredes@localhost ~]$ sleep 600
+
+[2]+  Stopped                 sleep 600

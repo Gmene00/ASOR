@@ -1,0 +1,35 @@
+[root@localhost cursoredes]# chrt -v -p 3142
+pid 3142's current scheduling policy: SCHED_OTHER
+pid 3142's current scheduling priority: 0
+
+
+
+[cursoredes@localhost ~]$ sudo su
+[root@localhost cursoredes]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  3138  3098  0  80   0 - 55154 poll_s pts/0    00:00:00 sudo
+4 S     0  3139  3138  0  80   0 - 48454 do_wai pts/0    00:00:00 su
+4 S     0  3142  3139  2  80   0 - 29151 do_wai pts/0    00:00:00 bash
+0 R     0  3172  3142  0  80   0 - 38300 -      pts/0    00:00:00 ps
+[root@localhost cursoredes]# nice -n-10 bash
+[root@localhost cursoredes]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  3138  3098  0  80   0 - 55154 poll_s pts/0    00:00:00 sudo
+4 S     0  3139  3138  0  80   0 - 48454 do_wai pts/0    00:00:00 su
+4 S     0  3142  3139  0  80   0 - 29151 do_wai pts/0    00:00:00 bash
+4 S     0  3174  3142  1  70 -10 - 29152 do_wai pts/0    00:00:00 bash
+0 R     0  3204  3174  0  70 -10 - 38300 -      pts/0    00:00:00 ps
+
+
+
+[root@localhost cursoredes]# chrt -f -p 12 3142
+[root@localhost cursoredes]# chrt -v -p 3142
+pid 3142's current scheduling policy: SCHED_FIFO
+pid 3142's current scheduling priority: 12
+[root@localhost cursoredes]# ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S     0  3138  3098  0  80   0 - 55154 poll_s pts/0    00:00:00 sudo
+4 S     0  3139  3138  0  80   0 - 48454 do_wai pts/0    00:00:00 su
+4 S     0  3142  3139  0  47   - - 29151 do_wai pts/0    00:00:00 bash
+4 S     0  3174  3142  0  70 -10 - 29152 do_wai pts/0    00:00:00 bash
+0 R     0  3227  3174  0  70 -10 - 38300 -      pts/0    00:00:00 ps

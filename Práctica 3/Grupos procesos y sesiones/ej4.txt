@@ -1,0 +1,4 @@
+ps ux
+ps -eo pid,gid,sid,s,command
+
+Comparten GID. El identificador es 1000.

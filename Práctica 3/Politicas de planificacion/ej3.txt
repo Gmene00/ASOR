@@ -1,0 +1,17 @@
+[root@localhost CodigoP3]# ./ej2
+SCHEDULER: OTHER
+PRIORIDAD: 0
+MAX: 0 - MIN: 0
+
+
+[root@localhost CodigoP3]# chrt -f -p 12 3845
+[root@localhost CodigoP3]# chrt -v -p 3845
+pid 3845's current scheduling policy: SCHED_FIFO
+pid 3845's current scheduling priority: 12
+
+
+[root@localhost CodigoP3]# ./ej2
+SCHEDULER: FIFO
+PRIORIDAD: 12
+MAX: 99 - MIN: 1
+

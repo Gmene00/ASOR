@@ -5,22 +5,19 @@
 
 int main(void) {
 	sigset_t myset;
-    /*He comprobado la variable de entorno y no me aparecia ningun valor
-    he intentado ponerle un valor set SLEEP_SECS=10
-    pero aun así sigue sin funcionar.
+    //export "SLEEP_SECS"=10 para poder hacer luego el getenv
 	char * segundos = getenv("SLEEP_SECS");
 	if (segundos == NULL) {
 		printf("Error sleep secs\n");
 		return -1;
 	}
-    */
 	sigemptyset(&myset);//Inicializa la estructura que almacenara las señales.
     //Añadimos las señales
 	sigaddset(&myset, SIGINT);
 	sigaddset(&myset, SIGTSTP);
     printf("Codigo bloqueado\n");
 	sigprocmask(SIG_BLOCK, &myset, NULL);//Protege la seccion del codigo.
-	sleep(30);//Dormimos el proceso
+	sleep(atoi(segundos));//Dormimos el proceso
 	
     sigset_t pendientes;
     sigemptyset(&myset);

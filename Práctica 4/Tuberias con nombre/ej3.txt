@@ -1,0 +1,19 @@
+[cursoredes@localhost Tuberias con nombre]$ mkfifo mituberia
+[cursoredes@localhost Tuberias con nombre]$ ls -l
+total 0
+-rw-rw-r-- 1 cursoredes cursoredes 0 Dec  8 18:24 ej3.txt
+prw-rw-r-- 1 cursoredes cursoredes 0 Dec  8 19:22 mituberia
+[cursoredes@localhost Tuberias con nombre]$ stat mituberia  File: ‘mituberia’
+  Size: 0               Blocks: 0          IO Block: 4096   fifo
+Device: fd00h/64768d    Inode: 51072102    Links: 1
+Access: (0664/prw-rw-r--)  Uid: ( 1000/cursoredes)   Gid: ( 1000/cursoredes)
+Access: 2022-12-08 19:22:43.058174444 +0100
+Modify: 2022-12-08 19:22:43.058174444 +0100
+Change: 2022-12-08 19:22:43.058174444 +0100
+ Birth: -
+[cursoredes@localhost Tuberias con nombre]$ echo "Hola" > mituberia
+
+
+##En otra terminal
+[cursoredes@localhost Tuberias con nombre]$ cat mituberia
+Hola

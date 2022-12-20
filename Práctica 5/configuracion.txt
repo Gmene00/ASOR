@@ -1,0 +1,9 @@
+VM1:
+ip link set eth0 up
+ip a add 192.168.0.1/24 dev eth0
+ip a add fd00::a:0:0:0:1/64 dev eth0
+
+VM2:
+ip link set eth0 up
+ip a add 192.168.0.100/24 dev eth0
+ip a add fd00::a:0:0:0:100/64 dev eth0
